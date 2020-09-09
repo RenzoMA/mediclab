@@ -1,0 +1,301 @@
+<div class="bg-light">
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>Registro de Médico</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12 order-md-1">
+        <form class="needs-validation" novalidate="">
+          <div class="row">
+            <div class="col-md-6 mb-6">
+              <div class="media d-flex align-items-center">
+                <div class="col-md-3 mb-3">
+                  <img src="assets/no-image.jpg" class="mr-3" width="100" />
+                </div>
+                <div class="col-md-4 mb-4">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="inputGroupFile04"
+                    aria-describedby="inputGroupFileAddon04"
+                  />
+                  <label class="custom-file-label" for="inputGroupFile04"
+                    >Buscar archivo</label
+                  >
+                  <small id="emailHelp" class="form-text text-muted"
+                    >Imagen de médico</small
+                  >
+                </div>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-6">
+              <div class="media d-flex align-items-center">
+                <div class="col-md-3 mb-3">
+                  <img src="assets/no-image.jpg" class="mr-3" width="100" />
+                </div>
+                <div class="col-md-4 mb-4">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="inputGroupFile04"
+                    aria-describedby="inputGroupFileAddon04"
+                  />
+                  <label class="custom-file-label" for="inputGroupFile04"
+                    >Choose file</label
+                  >
+                  <small id="emailHelp" class="form-text text-muted"
+                    >Imagen de carnet de colegiatura</small
+                  >
+                </div>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="tipoDocumento">Tipo Documento</label>
+              <select class="custom-select mr-sm-2" id="tipoDocumento">
+                <option selected>Elija...</option>
+                <option value="1">DNI</option>
+                <option value="2">Carnet Extranjeria</option>
+                <option value="3">Pasaporte</option>
+              </select>
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="nroDocumento">Nro. Documento</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nroDocumento"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="colegiatura">Nro. Colegiatura</label>
+              <input
+                type="text"
+                class="form-control"
+                id="colegiatura"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="apellidoPaterno">Apellido Paterno</label>
+              <input
+                type="text"
+                class="form-control"
+                id="apellidoPaterno"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="apellidoMaterno">Apellido Materno</label>
+              <input
+                type="text"
+                class="form-control"
+                id="apellidoMaterno"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="sexo">Sexo</label>
+              <select class="custom-select mr-sm-2" id="sexo">
+                <option selected>Choose...</option>
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
+              </select>
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="nacimiento">Fecha de Nacimiento</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nacimiento"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="especialidad">Especialidad</label>
+              <select class="custom-select mr-sm-2" id="especialidad">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="direccion">Direccion</label>
+              <input
+                type="text"
+                class="form-control"
+                id="direccion"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="departamento">Departamento</label>
+              <select class="custom-select mr-sm-2" id="departamento">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-3 mb-1">
+              <label for="provincia">Provincia</label>
+              <select class="custom-select mr-sm-2" id="provincia">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-2 mb-1">
+              <label for="districto">Distrito</label>
+              <select class="custom-select mr-sm-2" id="districto">
+                <option selected>Elegir...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="celular">Telefono Movil</label>
+              <input
+                type="text"
+                class="form-control"
+                id="celular"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="telefono">Telefono casa</label>
+              <input
+                type="text"
+                class="form-control"
+                id="telefono"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="email">Correo Electronico</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <hr class="mb-4" />
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="precio">Precio Consulta</label>
+              <input
+                type="text"
+                class="form-control"
+                id="precio"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="moneda">Moneda</label>
+              <select class="custom-select mr-sm-2" id="moneda">
+                <option selected>Elegir...</option>
+                <option value="1">Soles</option>
+                <option value="2">Dolares</option>
+              </select>
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="descuento">% Descuento por servicio médicos</label>
+              <input
+                type="text"
+                class="form-control"
+                id="descuento"
+                placeholder=""
+                value=""
+                required=""
+              />
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+          </div>
+          <hr class="mb-4" />
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-3 mb-3">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">
+                Registrar
+              </button>
+            </div>
+            <div class="col-md-3 mb-3">
+              <button class="btn btn btn-light btn-lg" type="submit">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
