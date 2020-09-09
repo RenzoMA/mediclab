@@ -1,0 +1,21 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Busqueda de médicos</h1>
+    <p class="lead">Elija la especialidad a atender.</p>
+</div>
+<div class="row justify-content-center">
+    <div class="form-row align-items-center">
+        <div class="col-auto my-2">
+            <label for="inlineFormCustomSelect">Especialidad</label>
+        </div>
+        <div class="col-auto my-10">
+            <select class="custom-select" #especialidad id="inlineFormCustomSelect">
+                <option selected>Elija</option>
+                <option value="0">Pediatría</option>
+                <option value="1">Psicologia</option>
+          </select>
+        </div>
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/medicos']">Buscar</button>
+        </div>
+    </div>
+</div>
