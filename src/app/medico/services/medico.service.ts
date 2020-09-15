@@ -7,11 +7,18 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class MedicoService {
+
   url: string = "https://mediclab-1599576972965.azurewebsites.net/management/";
+  
   constructor(private http: HttpClient) {}
 
   crearMedico(data: Medico): Observable<any> {
     let createUrl = `${this.url}register-medic`;
     return this.http.post(createUrl, data);
+  }
+
+  listarMedicos(id: number): Observable<any>{
+    let uri = `${this.url}medicos/${id}`;
+    return this.http.get(uri);
   }
 }

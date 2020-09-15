@@ -8,14 +8,15 @@
             <label for="inlineFormCustomSelect">Especialidad</label>
         </div>
         <div class="col-auto my-10">
-            <select class="custom-select" #especialidad id="inlineFormCustomSelect">
+            <select class="custom-select" #especialidad id="inlineFormCustomSelect" (change)="onChange($event.target.value)">
                 <option selected>Elija</option>
-                <option value="0">Pediatría</option>
-                <option value="1">Psicologia</option>
+                <option *ngFor="let especialidad of especialidades; let i = index" [value]="especialidad.id" >
+                    {{especialidad.nombre}}
+                </option>
           </select>
         </div>
         <div class="col-auto my-1">
-            <button type="submit" class="btn btn-primary" [routerLink]="['/medicos']">Buscar</button>
+            <button type="submit" class="btn btn-primary" (click)="searchAndRedirect()">Buscar</button>
         </div>
     </div>
 </div>

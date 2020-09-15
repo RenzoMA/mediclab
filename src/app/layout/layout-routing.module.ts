@@ -13,7 +13,7 @@ const routes: Routes = [
         loadChildren: () => import('./busqueda/busqueda.module').then(m => m.BusquedaModule) 
       },
       {
-        path: 'medicos',
+        path: 'medicos/:id',
         loadChildren: () => import('./listado-medico/listado-medico.module').then(m => m.ListadoMedicoModule)
       }
     ]
