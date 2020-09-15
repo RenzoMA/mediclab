@@ -16,4 +16,5 @@ export class Medico {
   sexo: string;
   telefono: string;
   tipoDocumento: string;
+  contraseña: string = "123";
 }
