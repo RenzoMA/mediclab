@@ -27,6 +27,7 @@ export class MedicoComponent implements OnInit {
     sexo: new FormControl(""),
     telefono: new FormControl(""),
     tipoDocumento: new FormControl(""),
+    password: new FormControl(""),
   });
 
   constructor(private medicoService: MedicoService) {}
@@ -37,11 +38,20 @@ export class MedicoComponent implements OnInit {
     console.log(event);
     const file = event && event.item(0);
     if (target.id === "inputPerfil") {
-      this.crearMedicoForm.get("perfil").setValue(file);
+      this.setBase64("perfil", file);
     }
     if (target.id === "inputCarnet") {
-      this.crearMedicoForm.get("carnet").setValue(file);
+      this.setBase64("carnet", file);
     }
+  }
+
+  setBase64(input: string, file: File) {
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      console.log(e.target.result);
+      this.crearMedicoForm.get(input).setValue(e.target.result);
+    };
+    reader.readAsDataURL(file);
   }
 
   ngOnInit(): void {}
