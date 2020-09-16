@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { UbigeoService } from './../../../services/ubigeo.service';
 import { BusquedaService } from './../../../layout/busqueda/services/busqueda.service';
 import { Component, OnInit, HostListener } from "@angular/core";
@@ -19,7 +20,8 @@ export class MedicoComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               public ubigeoService: UbigeoService,
               private medicoService: MedicoService,
-              private busquedaService: BusquedaService) {
+              private busquedaService: BusquedaService,
+              private alertService: AlertService) {
 
                 this.getEspecialidades();
   }
@@ -82,12 +84,17 @@ export class MedicoComponent implements OnInit {
     this.medicoService.crearMedico(medico).subscribe(
       (data) => {
         console.log(data);
+        this.alertService.showAlert('medico');
+        this.resetForm();
       },
       (error) => {
         
       });
   }
 
+  resetForm(){
+    this.crearMedicoForm.reset();
+  }
 
   getEspecialidades(){
     this.busquedaService.getEspecialidad()
