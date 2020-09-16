@@ -5,7 +5,11 @@ import { MedicoRoutingModule } from "./medico-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  imports: [CommonModule, MedicoRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule, 
+    MedicoRoutingModule, 
+    ReactiveFormsModule
+  ],
   declarations: [MedicoComponent],
 })
 export class MedicoModule {}

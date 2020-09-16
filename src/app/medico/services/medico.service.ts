@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Medico } from "../models/medico";
@@ -8,7 +9,7 @@ import { Observable } from "rxjs";
 })
 export class MedicoService {
 
-  url: string = "https://mediclab-1599576972965.azurewebsites.net/management/";
+  url: string = environment.API_URL;
   
   constructor(private http: HttpClient) {}
 

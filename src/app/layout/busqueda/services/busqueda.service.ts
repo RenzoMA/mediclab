@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { environment } from './../../../../environments/environment';
 
 @Injectable({
   providedIn: "root",
 })
 export class BusquedaService {
 
-  url: string = "https://mediclab-1599576972965.azurewebsites.net/management/speciality";
+  url: string = environment.API_URL + "speciality";
 
   constructor(private http: HttpClient) { }
 

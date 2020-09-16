@@ -1,7 +1,9 @@
+import { UbigeoService } from './../../../services/ubigeo.service';
+import { BusquedaService } from './../../../layout/busqueda/services/busqueda.service';
 import { Component, OnInit, HostListener } from "@angular/core";
 import { MedicoService } from "../../services/medico.service";
 import { Medico } from "../../models/medico";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "app-medico",
@@ -9,28 +11,18 @@ import { FormGroup, FormControl } from "@angular/forms";
   styleUrls: ["./medico.component.scss"],
 })
 export class MedicoComponent implements OnInit {
-  crearMedicoForm = new FormGroup({
-    apellidoMaterno: new FormControl(""),
-    apellidoPaterno: new FormControl(""),
-    carnet: new FormControl(""),
-    colegiatura: new FormControl(""),
-    correo: new FormControl(""),
-    departamento: new FormControl(""),
-    direccion: new FormControl(""),
-    distrito: new FormControl(""),
-    fechaNacimiento: new FormControl(""),
-    movil: new FormControl(""),
-    nombres: new FormControl(""),
-    numeroDocumento: new FormControl(""),
-    perfil: new FormControl(""),
-    provincia: new FormControl(""),
-    sexo: new FormControl(""),
-    telefono: new FormControl(""),
-    tipoDocumento: new FormControl(""),
-    password: new FormControl(""),
-  });
 
-  constructor(private medicoService: MedicoService) {}
+  especialidades = [];
+
+  crearMedicoForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              public ubigeoService: UbigeoService,
+              private medicoService: MedicoService,
+              private busquedaService: BusquedaService) {
+
+                this.getEspecialidades();
+  }
 
   @HostListener("change", ["$event.target"])
   emitFiles(target: any) {
@@ -45,6 +37,30 @@ export class MedicoComponent implements OnInit {
     }
   }
 
+  initForm(){
+    this.crearMedicoForm = this.formBuilder.group({
+      apellidoMaterno: '',
+      apellidoPaterno: '',
+      carnet: '',
+      colegiatura: '',
+      correo: '',
+      departamento: '',
+      direccion: '',
+      distrito: '',
+      fechaNacimiento: '',
+      movil: '',
+      nombres: '',
+      numeroDocumento: '',
+      perfil: '',
+      provincia: '',
+      sexo: '',
+      telefono: '',
+      tipoDocumento: '',
+      password: '',
+      especialidadId: 0
+    });
+  }
+
   setBase64(input: string, file: File) {
     const reader = new FileReader();
     reader.onload = (e: any) => {
@@ -54,15 +70,37 @@ export class MedicoComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initForm();
+  }
 
   onSubmit() {
     this.crearMedico(this.crearMedicoForm.value);
   }
 
   crearMedico(medico: Medico) {
-    this.medicoService.crearMedico(medico).subscribe((data) => {
-      console.log(data);
-    });
+    this.medicoService.crearMedico(medico).subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        
+      });
+  }
+
+
+  getEspecialidades(){
+    this.busquedaService.getEspecialidad()
+      .subscribe((response) => {
+        this.especialidades  = response;
+      },
+      (error) => {
+        console.log(error);
+      });
+  }
+
+  changeDep(){
+    this.crearMedicoForm.controls.provincia.setValue('');
+    this.crearMedicoForm.controls.dsitrito.setValue('');
   }
 }

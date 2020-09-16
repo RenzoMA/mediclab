@@ -1,348 +1,203 @@
 <div class="bg-light">
-  <div class="container">
-    <div class="py-5 text-center">
-      <h2>Registro de Médico</h2>
-    </div>
-    <div class="row">
-      <div class="col-md-12 order-md-1">
-        <form
-          class="needs-validation"
-          novalidate=""
-          [formGroup]="crearMedicoForm"
-          (ngSubmit)="onSubmit()"
-        >
-          <div class="row">
-            <div class="col-md-6 mb-6">
-              <div class="media d-flex align-items-center">
-                <div class="col-md-3 mb-3">
-                  <img src="assets/no-image.jpg" class="mr-3" width="100" />
-                </div>
-                <div class="col-md-4 mb-4">
-                  <input
-                    type="file"
-                    class="custom-file-input"
-                    id="inputPerfil"
-                    aria-describedby="inputGroupFileAddon04"
-                  />
-                  <label class="custom-file-label" for="inputPerfil"
-                    >Buscar archivo</label
-                  >
-                  <small id="emailHelp" class="form-text text-muted"
-                    >Imagen de médico</small
-                  >
-                </div>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-6">
-              <div class="media d-flex align-items-center">
-                <div class="col-md-3 mb-3">
-                  <img src="assets/no-image.jpg" class="mr-3" width="100" />
-                </div>
-                <div class="col-md-4 mb-4">
-                  <input
-                    type="file"
-                    class="custom-file-input"
-                    id="inputCarnet"
-                    aria-describedby="inputGroupFileAddon04"
-                  />
-                  <label class="custom-file-label" for="inputCarnet"
-                    >Choose file</label
-                  >
-                  <small id="emailHelp" class="form-text text-muted"
-                    >Imagen de carnet de colegiatura</small
-                  >
-                </div>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="tipoDocumento">Tipo Documento</label>
-              <select
-                class="custom-select mr-sm-2"
-                id="tipoDocumento"
-                formControlName="tipoDocumento"
-              >
-                <option selected>Elija...</option>
-                <option value="1">DNI</option>
-                <option value="2">Carnet Extranjeria</option>
-                <option value="3">Pasaporte</option>
-              </select>
-              <div class="invalid-feedback">Valid first name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="nroDocumento">Nro. Documento</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nroDocumento"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="numeroDocumento"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="colegiatura">Nro. Colegiatura</label>
-              <input
-                type="text"
-                class="form-control"
-                id="colegiatura"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="colegiatura"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="apellidoPaterno">Apellido Paterno</label>
-              <input
-                type="text"
-                class="form-control"
-                id="apellidoPaterno"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="apellidoPaterno"
-              />
-              <div class="invalid-feedback">Valid first name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="apellidoMaterno">Apellido Materno</label>
-              <input
-                type="text"
-                class="form-control"
-                id="apellidoMaterno"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="apellidoMaterno"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="nombre">Nombre</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nombre"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="nombres"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="sexo">Sexo</label>
-              <select
-                class="custom-select mr-sm-2"
-                id="sexo"
-                formControlName="sexo"
-              >
-                <option selected>Choose...</option>
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
-              </select>
-              <div class="invalid-feedback">Valid first name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="nacimiento">Fecha de Nacimiento</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nacimiento"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="fechaNacimiento"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="especialidad">Especialidad</label>
-              <select class="custom-select mr-sm-2" id="especialidad">
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="direccion">Direccion</label>
-              <input
-                type="text"
-                class="form-control"
-                id="direccion"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="direccion"
-              />
-              <div class="invalid-feedback">Valid first name is required.</div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="departamento">Departamento</label>
-              <select
-                class="custom-select mr-sm-2"
-                id="departamento"
-                formControlName="departamento"
-              >
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-3 mb-1">
-              <label for="provincia">Provincia</label>
-              <select
-                class="custom-select mr-sm-2"
-                id="provincia"
-                formControlName="provincia"
-              >
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-2 mb-1">
-              <label for="districto">Distrito</label>
-              <select
-                class="custom-select mr-sm-2"
-                id="districto"
-                formControlName="distrito"
-              >
-                <option selected>Elegir...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="celular">Telefono Movil</label>
-              <input
-                type="text"
-                class="form-control"
-                id="celular"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="movil"
-              />
-              <div class="invalid-feedback">Valid first name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="telefono">Telefono casa</label>
-              <input
-                type="text"
-                class="form-control"
-                id="telefono"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="telefono"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="email">Correo Electronico</label>
-              <input
-                type="text"
-                class="form-control"
-                id="email"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="correo"
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="password">Contraseña</label>
-              <input
-                type="text"
-                class="form-control"
-                id="contraseña"
-                placeholder=""
-                value=""
-                required=""
-                formControlName="password"
-              />
-            </div>
-          </div>
-          <hr class="mb-4" />
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="precio">Precio Consulta</label>
-              <input
-                type="text"
-                class="form-control"
-                id="precio"
-                placeholder=""
-                value=""
-                required=""
-              />
-              <div class="invalid-feedback">Valid first name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="moneda">Moneda</label>
-              <select class="custom-select mr-sm-2" id="moneda">
-                <option selected>Elegir...</option>
-                <option value="1">Soles</option>
-                <option value="2">Dolares</option>
-              </select>
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="descuento">% Descuento por servicio médicos</label>
-              <input
-                type="text"
-                class="form-control"
-                id="descuento"
-                placeholder=""
-                value=""
-                required=""
-              />
-              <div class="invalid-feedback">Valid last name is required.</div>
-            </div>
-          </div>
-          <hr class="mb-4" />
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-3 mb-3">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>Registro de Médico</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 order-md-1">
+                <form class="needs-validation" novalidate="" [formGroup]="crearMedicoForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <div class="media d-flex align-items-center">
+                                <div class="col-md-3 mb-3">
+                                    <img src="assets/no-image.jpg" class="mr-3" width="100" />
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <input type="file" class="custom-file-input" id="inputPerfil" aria-describedby="inputGroupFileAddon04" />
+                                    <label class="custom-file-label" for="inputPerfil">Buscar archivo</label>
+                                    <small id="emailHelp" class="form-text text-muted">Imagen de médico</small>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <div class="media d-flex align-items-center">
+                                <div class="col-md-3 mb-3">
+                                    <img src="assets/no-image.jpg" class="mr-3" width="100" />
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <input type="file" class="custom-file-input" id="inputCarnet" aria-describedby="inputGroupFileAddon04" />
+                                    <label class="custom-file-label" for="inputCarnet">Choose file</label>
+                                    <small id="emailHelp" class="form-text text-muted">Imagen de carnet de colegiatura</small>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="tipoDocumento">Tipo Documento</label>
+                            <select class="custom-select mr-sm-2" id="tipoDocumento" formControlName="tipoDocumento">
+                              <option selected>Elija...</option>
+                              <option value="1">DNI</option>
+                              <option value="2">Carnet Extranjeria</option>
+                              <option value="3">Pasaporte</option>
+                            </select>
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="nroDocumento">Nro. Documento</label>
+                            <input type="text" class="form-control" id="nroDocumento" placeholder="" value="" required="" formControlName="numeroDocumento" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="colegiatura">Nro. Colegiatura</label>
+                            <input type="text" class="form-control" id="colegiatura" placeholder="" value="" required="" formControlName="colegiatura" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="apellidoPaterno">Apellido Paterno</label>
+                            <input type="text" class="form-control" id="apellidoPaterno" placeholder="" value="" required="" formControlName="apellidoPaterno" />
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="apellidoMaterno">Apellido Materno</label>
+                            <input type="text" class="form-control" id="apellidoMaterno" placeholder="" value="" required="" formControlName="apellidoMaterno" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="" value="" required="" formControlName="nombres" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="sexo">Sexo</label>
+                            <select class="custom-select mr-sm-2" id="sexo" formControlName="sexo">
+                              <option selected>Choose...</option>
+                              <option value="1">Masculino</option>
+                              <option value="2">Femenino</option>
+                            </select>
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="nacimiento">Fecha de Nacimiento</label>
+                            <input type="text" class="form-control" id="nacimiento" placeholder="" value="" required="" formControlName="fechaNacimiento" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="especialidad">Especialidad</label>
+                            <select class="custom-select mr-sm-2" id="especialidad" formControlName="especialidadId">
+                              <option selected>Choose...</option>
+                              <option *ngFor="let especialidad of especialidades; let i = index" [ngValue]="especialidad.id">
+                                {{especialidad.nombre}}
+                              </option>
+                            </select>
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="direccion">Direccion</label>
+                            <input type="text" class="form-control" id="direccion" placeholder="" value="" required="" formControlName="direccion" />
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="departamento">Departamento</label>
+                            <select class="custom-select mr-sm-2" (change)="changeDep()" id="departamento" formControlName="departamento">
+                              <option value=""></option>
+                              <option *ngFor="let dep of ubigeoService.Departamentos" [value]="dep.cod_ubigeo_department">
+                                {{dep.name_department}}
+                              </option>
+                            </select>
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-3 mb-1">
+                            <label for="provincia">Provincia</label>
+                            <select class="custom-select mr-sm-2" (change)="crearMedicoForm.get('distrito').setValue('')" id="provincia" formControlName="provincia">
+                              <option selected>Choose...</option>
+                              <option *ngFor="let prov of ubigeoService.getProvinciasByIdDepartamento(crearMedicoForm.get('departamento').value)" [value]="prov.cod_ubigeo_province">
+                                {{prov.name_province}}
+                              </option>
+                            </select>
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-2 mb-1">
+                            <label for="districto">Distrito</label>
+                            <select class="custom-select mr-sm-2" id="districto" formControlName="distrito">
+                              <option selected>Elegir...</option>
+                              <option *ngFor="let dis of ubigeoService.getDistritosByIdProvincia(crearMedicoForm.get('provincia').value)" [value]="dis.cod_ubigeo_district">
+                                {{dis.name_district}}
+                              </option>
+                            </select>
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="celular">Telefono Movil</label>
+                            <input type="text" class="form-control" id="celular" placeholder="" value="" required="" formControlName="movil" />
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="telefono">Telefono casa</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="" value="" required="" formControlName="telefono" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="email">Correo Electronico</label>
+                            <input type="text" class="form-control" id="email" placeholder="" value="" required="" formControlName="correo" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="contraseña" placeholder="" value="" required="" formControlName="password" />
+                        </div>
+                    </div>
+                    <hr class="mb-4" />
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="precio">Precio Consulta</label>
+                            <input type="text" class="form-control" id="precio" placeholder="" value="" required="" />
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="moneda">Moneda</label>
+                            <select class="custom-select mr-sm-2" id="moneda">
+                              <option selected>Elegir...</option>
+                              <option value="1">Soles</option>
+                              <option value="2">Dolares</option>
+                            </select>
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="descuento">% Descuento por servicio médicos</label>
+                            <input type="text" class="form-control" id="descuento" placeholder="" value="" required="" />
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <hr class="mb-4" />
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-3 mb-3">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">
                 Registrar
               </button>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <button class="btn btn btn-light btn-lg">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-3 mb-3">
-              <button class="btn btn btn-light btn-lg">Cancelar</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
 </div>
