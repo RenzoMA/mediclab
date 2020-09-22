@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Reserva de Médico</h2>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-5 border-left">
+            <div class="row d-flex justify-content-center" style="background-color: paleturquoise;">
+                <h2>Médico seleccionado</h2>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img src="assets/no-image.jpg" height="150px">
+                </div>
+                <div class="col-md-6">
+                    <label>DR HUERTAS </label>
+                    <p>PEDIATRIA</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-6">
+                    <div class="row d-flex justify-content-center">
+                        <p>20/20/2019</p>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <p> 09:00 am</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row d-flex justify-content-center">
+                        <h4>PRECIO CONSULTA</h4>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <h5>S/. 50.00</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 offset-md-1 border-left">
+            <div class="row d-flex justify-content-center" style="background-color: paleturquoise;">
+                <h2>Ingrese Información</h2>
+            </div>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <form class="needs-validation" novalidate="">
+                    <div class="form-group row">
+                        <label for="apellidos" class="col-sm-4 col-form-label">Nombres completos</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="apellidos" formControlName="apellidos">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nombres" class="col-sm-4 col-form-label">Telefono </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="nombres" formControlName="nombres">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="celular" class="col-sm-4 col-form-label">Correo electronico</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="celular" formControlName="telefono">
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 mb-6">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Reservar</button>
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <button class="btn btn-default btn-lg btn-block" type="submit">Cancelar</button>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+</div>

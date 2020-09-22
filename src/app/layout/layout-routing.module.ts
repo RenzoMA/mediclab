@@ -15,6 +15,14 @@ const routes: Routes = [
       {
         path: 'medicos/:id',
         loadChildren: () => import('./listado-medico/listado-medico.module').then(m => m.ListadoMedicoModule)
+      },
+      {
+        path: 'reserva',
+        loadChildren: () => import('./reserva/reserva.module').then(m => m.ReservaModule)
+      },
+      {
+        path: 'payout/:transactionId',
+        loadChildren: () => import('./pago/pago.module').then(m => m.PagoModule)
       }
     ]
   }
