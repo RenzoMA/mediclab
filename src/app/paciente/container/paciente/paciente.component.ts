@@ -27,7 +27,8 @@ export class PacienteComponent implements OnInit {
       nombres: '',
       telefono: '',
       correo: '',
-      password: ''
+      password: '',
+      rol: 'PACIENTE'
     });
   }
 

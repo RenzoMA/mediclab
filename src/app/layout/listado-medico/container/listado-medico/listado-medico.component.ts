@@ -1,7 +1,7 @@
 import { Medico } from './../../../../medico/models/medico';
 import { MedicoService } from './../../../../medico/services/medico.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-medico',
@@ -14,14 +14,23 @@ export class ListadoMedicoComponent implements OnInit {
 
   medicos = [];
 
+  dayAfterTomorrow;
+
   constructor(private medicoService: MedicoService,
+              private router: Router,
               private activeRouter: ActivatedRoute) { 
     this.getMedicos();
   }
 
   ngOnInit(): void {
+    this.setDate();
   }
 
+  setDate(){
+    let d = new Date();
+    d.setDate(d.getDate()+2);
+    this.dayAfterTomorrow = d;
+  }
 
   getMedicos(){
     this.activeRouter.params.subscribe(
@@ -38,5 +47,9 @@ export class ListadoMedicoComponent implements OnInit {
           });
       }
     );
+  }
+
+  reservar(medico: Medico, date: string) {
+    this.router.navigate([`/reserva/${medico.id}/${date}`]);
   }
 }

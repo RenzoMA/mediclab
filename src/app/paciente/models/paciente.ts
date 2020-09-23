@@ -4,5 +4,6 @@ export class Paciente {
     telefono: string;
     correo: string;
     password: string;
+    rol: String = "PACIENTE";
   }
   

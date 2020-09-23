@@ -17,7 +17,7 @@ const routes: Routes = [
         loadChildren: () => import('./listado-medico/listado-medico.module').then(m => m.ListadoMedicoModule)
       },
       {
-        path: 'reserva',
+        path: 'reserva/:idMedico/:date',
         loadChildren: () => import('./reserva/reserva.module').then(m => m.ReservaModule)
       },
       {

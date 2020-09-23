@@ -14,17 +14,17 @@
                     <img src="assets/no-image.jpg" height="150px">
                 </div>
                 <div class="col-md-6">
-                    <label>DR HUERTAS </label>
-                    <p>PEDIATRIA</p>
+                    <label>DR. {{ medico.apellidoPaterno}} {{medico.apellidoMaterno}} {{medico.nombres}}</label>
+                    <p>{{ medico.especialidadByIdEspecialidad.nombre | uppercase }}</p>
                 </div>
             </div>
             <div class="row" style="margin-top: 50px;">
                 <div class="col-md-6">
                     <div class="row d-flex justify-content-center">
-                        <p>20/20/2019</p>
+                        <p>{{aux_date | date: 'dd/MM/yyyy'}}</p>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <p> 09:00 am</p>
+                        <p>{{aux_date | date: 'hh:mm'}}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -47,19 +47,19 @@
                     <div class="form-group row">
                         <label for="apellidos" class="col-sm-4 col-form-label">Nombres completos</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="apellidos" formControlName="apellidos">
+                            <input type="text" class="form-control" id="nombres">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="nombres" class="col-sm-4 col-form-label">Telefono </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="nombres" formControlName="nombres">
+                            <input type="text" class="form-control" id="telefono">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="celular" class="col-sm-4 col-form-label">Correo electronico</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="celular" formControlName="telefono">
+                            <input type="text" class="form-control" id="email">
                         </div>
                     </div>
                     <hr class="mb-4">

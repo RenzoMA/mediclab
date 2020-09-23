@@ -26,7 +26,7 @@
                         <li>De: 09:00</li>
                         <li>A : 16:00</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Reservar</button>
+                    <button type="button" class="btn btn-lg btn-block btn-primary" (click)="reservar(medico, 'TODAY')">Reservar</button>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm">
@@ -38,19 +38,19 @@
                         <li>De: 09:00</li>
                         <li>A : 16:00</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Reservar</button>
+                    <button type="button" class="btn btn-lg btn-block btn-primary" (click)="reservar(medico, 'TOMORROW')">Reservar</button>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">10/09/2020</h4>
+                    <h4 class="my-0 font-weight-normal">{{dayAfterTomorrow | date: 'dd/MM/yyyy'}}</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>De: 09:00</li>
                         <li>A : 16:00</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Reservar</button>
+                    <button type="button" class="btn btn-lg btn-block btn-primary" (click)="reservar(medico, 'OTHER')">Reservar</button>
                 </div>
             </div>
         </div>

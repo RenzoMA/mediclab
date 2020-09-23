@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
 
-  API_URL: 'https://mediclab-1599576972965.azurewebsites.net/management/'
+  API_URL: 'https://mediclab-1599576972965.azurewebsites.net/management/',
+  API_URL_AUTH: 'https://mediclab-1599576972965.azurewebsites.net/auth/login'
+
+  //API_URL_AUTH: 'http://localhost:8080/auth/login',
   //API_URL: 'http://localhost:8080/management/'
 
 

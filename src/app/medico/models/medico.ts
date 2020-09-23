@@ -1,4 +1,5 @@
 export class Medico {
+  id?: string;
   apellidoMaterno: string;
   apellidoPaterno: string;
   carnet: string;
@@ -18,4 +19,5 @@ export class Medico {
   tipoDocumento: string;
   especialidadId: number;
   password: string = "123";
+  role: string = "MEDIC";
 }

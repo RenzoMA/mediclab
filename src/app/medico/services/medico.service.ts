@@ -22,4 +22,9 @@ export class MedicoService {
     let uri = `${this.url}medicos/${id}`;
     return this.http.get(uri);
   }
+
+  getOneMedico(id: number): Observable<any> {
+    let uri = `${this.url}medicos/single/${id}`;
+    return this.http.get(uri);
+  }
 }
