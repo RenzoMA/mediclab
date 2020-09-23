@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'payout/:transactionId',
         loadChildren: () => import('./pago/pago.module').then(m => m.PagoModule)
+      },
+      {
+        path: 'success/:transactionId',
+        loadChildren: () => import('./reserva-detail/reserva-detail.module').then(m => m.ReservaDetailModule)
       }
     ]
   }

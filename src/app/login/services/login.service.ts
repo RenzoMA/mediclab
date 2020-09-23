@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -11,12 +12,22 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  async login(user: string, password: string) {
+  login(user: string, password: string) {
     let uri = `${this.url}`;
+    console.log('URL ' + uri);
     let body = {
       user: user,
       password: password
     }
-    return this.http.post(uri, body);
+    return new Promise<any>( (resolve, reject) => {
+      this.http.post( uri, body).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        (error)=> {
+          reject(error);
+        } 
+      );
+    });
   }
 }

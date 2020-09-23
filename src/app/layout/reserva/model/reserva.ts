@@ -7,5 +7,5 @@ export class Reserva {
     correo: string;
     medicoId: string;
     pacienteId: string;
-    formaPagoByIdPago: FormaPago;
+    formaPagoByIdPago?: FormaPago;
 }

@@ -5,20 +5,22 @@
 
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6">
-            <form class="form-signin">
+            <div class="form-signin">
 
                 <div class="form-label-group">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Correo electronico" required="" autofocus="">
+                    <input type="email" [(ngModel)]="user.user" id="inputEmail" class="form-control" placeholder="Correo electronico" required="" autofocus="">
                 </div>
                 <br>
                 <div class="form-label-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+                    <input type="password" [(ngModel)]="user.password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
                 </div>
 
                 <div class="checkbox mb-3">
                 </div>
-                <button class="btn btn-lg btn-primary btn-block" [routerLink]="['/']" type="submit">Ingresar</button>
-            </form>
+                <button [disabled]="loading" class="btn btn-lg btn-primary btn-block" (click)="login()" type="submit">
+                    <i *ngIf="loading"  class="fa fa-spinner fa-spin"></i>
+                    Ingresar</button>
+            </div>
         </div>
     </div>
 </div>
